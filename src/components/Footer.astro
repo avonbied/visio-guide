@@ -1,0 +1,7 @@
+---
+const TODAY = new Date(Date.now());
+const CURRENT_YEAR = TODAY.getFullYear();
+---
+<footer>
+	<small>&copy; {CURRENT_YEAR} Lex von Biedenfeld | Last updated <time datetime={`${TODAY.getUTCFullYear()}-${TODAY.getUTCMonth()+1}-${TODAY.getUTCDay()+1}`}>{TODAY.toLocaleDateString('en',{year:'numeric',month:'short',day:'numeric'})}</time></small>
+</footer>

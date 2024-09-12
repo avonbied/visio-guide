@@ -1,0 +1,48 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const faviconFile = '/favicon.svg';
+const faviconURL = new URL(faviconFile, Astro.url);
+
+interface Props {
+	title?: string,
+	description?: string
+}
+
+const SiTE_TITLE = 'Visio Guide';
+let {
+	title = SiTE_TITLE,
+	description = ''
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link href={faviconFile} rel="icon" type="image/svg+xml" />
+	<!-- Standard Meta -->
+	<title>{(title !== SiTE_TITLE) ? `${title} | `: ''}{SiTE_TITLE}</title>
+	<meta name="description" property="og:description" content={description} />
+	<!-- OpenGraph Tags -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={`${(title !== SiTE_TITLE ? title+' | ': '')}${SiTE_TITLE}`} />
+	<meta property="og:url" content={Astro.url} />
+	<meta property="og:image" content={faviconURL} />
+	<meta property="og:image:alt" content="Site Logo" />
+	<meta property="og:description" content={description} />
+	<!-- SEO -->
+
+	<!-- Google Fonts -->
+
+</head>
+<body>
+<Header />
+<main id="content">
+	<slot />
+</main>
+<Footer />
+</body>
+</html>
