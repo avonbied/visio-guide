@@ -1,2 +1,2 @@
-# visio-guide
-This is an in-depth guide wiki for advanced usage of Microsoft Visio
+# Lex's Visio Guide
+This is an in-depth guide wiki for advanced usage of Microsoft Visio. The goal is to be able to provide everyday Visio users with a tried and true source of Visio content that is easy to navigate.
