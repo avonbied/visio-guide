@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://avonbied.github.io',
-	base: '/visio-guide',
+	site: process.env.SITE_URL,
+	base: process.env.SITE_BASE,
 	integrations: [sitemap()],
 	server: {
 		port: Number(process.env.PORT ?? 8080),
